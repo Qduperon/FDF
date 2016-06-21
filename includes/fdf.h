@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/16 13:45:13 by qduperon          #+#    #+#             */
-/*   Updated: 2016/06/20 15:05:54 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/06/21 13:48:14 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,17 @@
 
 # include "./../libft/includes/libft.h"
 # include "./../minilibx_macos/mlx.h"
+
+typedef struct	s_env
+{
+	void		*mlx;
+	void		*win;
+	void		*img;
+}				t_env;
+
+typedef struct	s_map
+{
+	char		**map;
+}				t_map;
 
 #endif

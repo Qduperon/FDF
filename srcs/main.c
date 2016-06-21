@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/15 15:18:45 by qduperon          #+#    #+#             */
-/*   Updated: 2016/06/16 18:04:06 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/06/21 14:10:22 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fdf.h"
@@ -19,7 +19,13 @@ int		ft_shutdown(int keycode, void *param)
 	return (0);
 }
 
-int		main(void)
+void	ft_exit(char *c)
+{
+	ft_putendl(c);
+	exit(1);
+}
+
+int		main(int ac, char **av)
 {
 	void	*mlx;
 	void	*win;
@@ -29,6 +35,8 @@ int		main(void)
 	int		z;
 	int 	w;
 
+	if (ac != 2)
+		ft_exit("Usage : ./fdf <mapfile.fdf>");
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, 400, 400, "test Qduperon");
 	w = 0;
