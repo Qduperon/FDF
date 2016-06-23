@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/15 15:18:45 by qduperon          #+#    #+#             */
-/*   Updated: 2016/06/23 15:12:10 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/06/23 18:34:20 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fdf.h"
@@ -31,12 +31,13 @@ int		main(int ac, char **av)
 	t_map	*map;
 	t_env	*e;
 
+	errno = 0;
 	if (ac != 2 || ft_strstr(av[1], "dev") != 0)
-		ft_exit("Usage : ./fdf <mapfile.fdf>");
+		ft_exit("Usage: ./fdf <mapfile.fdf>");
 	e = (t_env *)malloc(sizeof(t_env));
 	map = (t_map *)malloc(sizeof(t_map));
 	mlx = mlx_init();
-	map->map = av;
+	map->av = av;
 	win = mlx_new_window(mlx, 400, 400, "test Qduperon");
 	w = 0;
 	while (w < 400)
@@ -60,6 +61,7 @@ int		main(int ac, char **av)
 		}
 		y = y + 40;
 	}
+	//e->coord = ft_get_coord(map);
 	//img = mlx_new_image(mlx, x, y);
 	//mlx_get_color_value(mlx, 0x00FF00FF);
 	//mlx_put_image_to_window(mlx, win, img, x, y);
