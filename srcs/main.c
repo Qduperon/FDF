@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/15 15:18:45 by qduperon          #+#    #+#             */
-/*   Updated: 2016/06/21 14:10:22 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/06/23 15:12:10 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fdf.h"
@@ -19,12 +19,6 @@ int		ft_shutdown(int keycode, void *param)
 	return (0);
 }
 
-void	ft_exit(char *c)
-{
-	ft_putendl(c);
-	exit(1);
-}
-
 int		main(int ac, char **av)
 {
 	void	*mlx;
@@ -34,10 +28,15 @@ int		main(int ac, char **av)
 	int		y;
 	int		z;
 	int 	w;
+	t_map	*map;
+	t_env	*e;
 
-	if (ac != 2)
+	if (ac != 2 || ft_strstr(av[1], "dev") != 0)
 		ft_exit("Usage : ./fdf <mapfile.fdf>");
+	e = (t_env *)malloc(sizeof(t_env));
+	map = (t_map *)malloc(sizeof(t_map));
 	mlx = mlx_init();
+	map->map = av;
 	win = mlx_new_window(mlx, 400, 400, "test Qduperon");
 	w = 0;
 	while (w < 400)
@@ -66,4 +65,5 @@ int		main(int ac, char **av)
 	//mlx_put_image_to_window(mlx, win, img, x, y);
 	mlx_key_hook(win, ft_shutdown, 0);
 	mlx_loop(mlx);
+	ft_free(map, e);
 }

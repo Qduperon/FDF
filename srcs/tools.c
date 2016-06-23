@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/16 13:45:13 by qduperon          #+#    #+#             */
-/*   Updated: 2016/06/23 16:40:12 by qduperon         ###   ########.fr       */
+/*   Created: 2016/06/23 15:10:06 by qduperon          #+#    #+#             */
+/*   Updated: 2016/06/23 16:40:06 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "fdf.h"
 
-# include "./../libft/includes/libft.h"
-# include "./../minilibx_macos/mlx.h"
-
-# define WIDTH 1500
-# define HEIGHT	750
-
-typedef struct	s_env
+void	ft_free(t_map *map, t_env *e)
 {
-	void		*mlx;
-	void		*win;
-	void		*img;
-}				t_env;
+	free(map);
+	free(e);
+}
 
-typedef struct	s_map
+void	ft_exit(char *s)
 {
-	char		**map;
-}				t_map;
-
-void	ft_exit(char *s);
-void	ft_free(t_map *map, t_env *e);
-
-#endif
+	ft_putendl(s);
+	exit(1);
+}
