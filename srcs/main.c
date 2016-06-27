@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/15 15:18:45 by qduperon          #+#    #+#             */
-/*   Updated: 2016/06/23 18:34:20 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/06/27 14:29:27 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fdf.h"
@@ -31,7 +31,6 @@ int		main(int ac, char **av)
 	t_map	*map;
 	t_env	*e;
 
-	errno = 0;
 	if (ac != 2 || ft_strstr(av[1], "dev") != 0)
 		ft_exit("Usage: ./fdf <mapfile.fdf>");
 	e = (t_env *)malloc(sizeof(t_env));

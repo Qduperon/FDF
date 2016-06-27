@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 15:10:06 by qduperon          #+#    #+#             */
-/*   Updated: 2016/06/23 18:34:00 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/06/27 16:28:20 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_free(t_map *map, t_env *e)
 
 void	ft_exit(char *s)
 {
-	ft_putendl("fdf: ");
+	ft_putstr("fdf: ");
 	ft_putstr(s);
 	exit(1);
 }
