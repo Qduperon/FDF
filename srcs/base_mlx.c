@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   base_mlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/15 15:18:45 by qduperon          #+#    #+#             */
-/*   Updated: 2016/06/29 14:34:53 by qduperon         ###   ########.fr       */
+/*   Created: 2016/06/28 14:15:06 by qduperon          #+#    #+#             */
+/*   Updated: 2016/06/29 14:38:49 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int		main(int ac, char **av)
-{	
-	t_map	*map;
-	t_env	*e;
+static int	ft_key_hook(int keycode, t_env *e)
+{
+	if (keycode == ECHAP)
+		exit(1);
+}
 
-	if (ac != 2 || ft_strstr(av[1], "dev") != 0)
-		ft_exit("Usage: ./fdf <mapfile.fdf>");
-	e = (t_env *)malloc(sizeof(t_env));
-	map = (t_map *)malloc(sizeof(t_map));
-	map->av = av;
-	e->coord = ft_get_coord(map);
-	ft_do_mlx(e);
-	ft_free(map, e);
-	return (0);
+void		ft_do_mlx(t_env *e)
+{
+	e->mlx = mlx_init();
+	e->win = mlx_new_window(e->mlx, WIDTH, HEIGHT, "fdf");
+	e->img = mlx_new_image(e->mlx, WIDTH, HEIGHT);
+	mlx_key_hook(e->win, ft_key_hook, e);
 }
