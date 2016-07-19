@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 18:15:35 by qduperon          #+#    #+#             */
-/*   Updated: 2016/06/29 19:53:48 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/07/19 18:44:37 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ static void		ft_get_map(t_map *map)
 	close(fd);
 }
 
-static	t_coord	*ft_new_coord(int x, int j, t_map *map, t_coord ***coord)
+static	t_coord	*ft_new_coord(int x, int y, int z, t_map *map)
 {
 	t_coord *coord;
 	
-	if (!(coord = (t_coord *)malloc(sizeof(t_cooord))))
+	if (!(coord = (t_coord *)malloc(sizeof(t_coord))))
 		return (NULL);
 	coord->size_x = (map->x);
 	coord->size_y = (map->y);
@@ -60,7 +60,7 @@ static	t_coord	*ft_new_coord(int x, int j, t_map *map, t_coord ***coord)
 	return (coord);
 }
 
-static void		ft_get(int i, int j, t_map, *map, t_coord ***coord)
+static void		ft_get(int i, int j, t_map *map, t_coord ***coord)
 {
 	while (++j < map->x)
 	{
@@ -81,16 +81,16 @@ t_coord			***ft_get_coord(t_map *map)
 
 	i = 0;
 	ft_get_map(map);
-	if (!(coord = (t_coord ***)malloc(sizeof(t_coord **) * map->y +1)))
+	if (!(coord = (t_coord ***)malloc(sizeof(t_coord **) * map->y + 1)))
 		return (NULL);
 	while (i < map->y)
 	{
-		map->tmp = ft_strsplit(map->tab[i], ' ');
+		map->tmp = ft_strsplit(map->map[i], ' ');
 		map->x = 0;
-		while (map->[map->x])
+		while (map->tmp[map->x])
 			map->x++;
 		j = -1;
-		if (!(coord[i] = (t_coord **)malloc(sizeof(t_coord *) * (map->x +1))))
+		if (!(coord[i] = (t_coord **)malloc(sizeof(t_coord *) * (map->x + 1))))
 			return (NULL);
 		ft_get(i, j, map, coord);
 		i++;
