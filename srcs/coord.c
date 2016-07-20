@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 18:15:35 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/19 18:44:37 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/07/20 17:27:05 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void		ft_get_map(t_map *map)
 	int		i;
 	int		fd;
 	char	*line;
-	
+
 	i = 0;
 	map->y = 0;
 	if ((fd = open(map->av[1], O_RDONLY)) < 0)
@@ -49,7 +49,7 @@ static void		ft_get_map(t_map *map)
 static	t_coord	*ft_new_coord(int x, int y, int z, t_map *map)
 {
 	t_coord *coord;
-	
+
 	if (!(coord = (t_coord *)malloc(sizeof(t_coord))))
 		return (NULL);
 	coord->size_x = (map->x);

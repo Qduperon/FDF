@@ -6,14 +6,14 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/15 15:18:45 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/19 14:19:10 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/07/20 17:18:58 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 int		main(int ac, char **av)
-{	
+{
 	t_map	*map;
 	t_env	*e;
 

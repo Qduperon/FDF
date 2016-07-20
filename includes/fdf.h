@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/16 13:45:13 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/19 18:15:09 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/07/20 17:18:19 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 # define HEIGHT	750
 # define XCENTER (WIDTH / 2)
 # define YCENTER (HEIGHT / 2)
+# define OFF 1.00
+# define YOFF 1.00
+# define CT1 0.5
+# define CT2 0.5
 
 # define ECHAP	53
 # define UP		126
@@ -36,6 +40,20 @@
 # define Z_MORE	121
 # define RESET	71
 
+# define XR1(x) (x * (cos(e->roty)))
+# define XR2(x) (x * (cos((e->roty) + M_PI_2)))
+# define YR1(y) (y * (sin(e->roty)) * (sin(e->rot)))
+# define YR2(y) (y * (sin((e->roty) + M_PI_2)) * (sin(e->rot)))
+# define XA CT1 * XR1 (e->inc->x1) + CT2 * XR2 (e->inc->y1)
+# define YA2 (CT1 / 2 * YR1(e->inc->x1)) + CT2 / 2 * YR2 (e->inc->y1)
+# define YA -((e->inc->z) * sin((e->rot) + M_PI_2)) + YA2
+# define XB CT1 * XR1 (e->inc->x2) + CT2 * XR2 (e->inc->y1)
+# define YB2 CT1 / 2 * YR1 (e->inc->x2) + CT2 / 2 * YR2 (e->inc->y1)
+# define YB -((e->inc->z2) * sin((e->rot) + M_PI_2)) + YB2
+# define XC CT1 * XR1 (e->inc->x1) + CT2 * XR2 (e->inc->y2)
+# define YC2 CT1 / 2 * YR1 (e->inc->x1) + CT2 / 2 * YR2 (e->inc->y2)
+# define YC -((e->inc->z3) *sin ((e->rot) + M_PI_2)) +YC2
+
 typedef struct		s_box
 {
 	float			xc;
@@ -46,6 +64,19 @@ typedef struct		s_box
 	int				y1;
 	int				y2;
 }					t_box;
+
+typedef struct		s_color
+{
+	unsigned char	b;
+	unsigned char	g;
+	unsigned char	r;
+	unsigned char	b1;
+	unsigned char	g1;
+	unsigned char	r1;
+	unsigned char	b2;
+	unsigned char	g2;
+	unsigned char	r2;
+}					t_color;
 
 typedef struct		s_coord
 {
@@ -86,6 +117,7 @@ typedef	struct		s_env
 	int				zoom;
 	int				zh;
 	t_box			*box;
+	t_color			*colorpixel;
 	t_coord			***coord;
 	t_inc			*inc;
 	unsigned long	color;
@@ -105,9 +137,10 @@ typedef struct		s_map
 	int				y;
 }					t_map;
 
-t_coord	***ft_get_coord(t_map *map);
-void	ft_do_mlx(t_env *e);
-void	ft_exit(char *s);
-void	ft_free(t_map *map, t_env *e);
+int					ft_expose_hook(t_env *e);
+t_coord				***ft_get_coord(t_map *map);
+void				ft_do_mlx(t_env *e);
+void				ft_exit(char *s);
+void				ft_free(t_map *map, t_env *e);
 
 #endif

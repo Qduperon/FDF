@@ -6,13 +6,13 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/28 14:15:06 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/19 19:41:38 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/07/20 17:22:52 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static int ft_loop_hook(t_env *e)
+static int	ft_loop_hook(t_env *e)
 {
 	mlx_destroy_image(e->mlx, e->img);
 	e->img = mlx_new_image(e->mlx, WIDTH, HEIGHT);
@@ -51,7 +51,7 @@ static int	ft_key_hook(int keycode, t_env *e)
 	if (keycode == ECHAP)
 		exit(1);
 	if (keycode == DEZOOM)
-	   e->zoom -= (e->zoom >= 3) ? 3 : 0;
+		e->zoom -= (e->zoom >= 3) ? 3 : 0;
 	if (keycode == ZOOM)
 		e->zoom += 3;
 	if (keycode == Z_LESS)

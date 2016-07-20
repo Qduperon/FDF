@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 15:10:06 by qduperon          #+#    #+#             */
-/*   Updated: 2016/06/27 16:28:20 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/07/20 13:51:26 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,11 @@ void	ft_exit(char *s)
 	ft_putstr("fdf: ");
 	ft_putstr(s);
 	exit(1);
+}
+
+int		ft_expose_hook(t_env *e)
+{
+	ft_draw(e);
+	ft_display(e);
+	return (0);
 }
