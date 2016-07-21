@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/16 13:45:13 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/20 17:18:19 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/07/21 16:37:17 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,7 @@ typedef struct		s_map
 int					ft_expose_hook(t_env *e);
 t_coord				***ft_get_coord(t_map *map);
 void				ft_do_mlx(t_env *e);
+void				ft_draw(t_env *e);
 void				ft_exit(char *s);
 void				ft_free(t_map *map, t_env *e);
 
