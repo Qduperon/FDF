@@ -6,7 +6,7 @@
 #    By: qduperon <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/16 13:22:36 by qduperon          #+#    #+#              #
-#    Updated: 2016/07/21 16:50:20 by qduperon         ###   ########.fr        #
+#    Updated: 2016/07/26 18:21:15 by qduperon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,14 @@ NAME = fdf
 
 SRCS = srcs/base_mlx.c \
 	   srcs/coord.c \
-	   srcs/main.c \
-	   srcs/tools.c \
 	   srcs/draw.c \
+	   srcs/main.c \
+	   srcs/mlx_color.c \
+	   srcs/tools.c \
+	   srcs/vect_ab.c \
+	   srcs/vect_crux.c \
+	   srcs/vect_octant.c \
+	   srcs/vect_octant2.c \
 
 #==============================================================================#
 #                             //  FLAGS  \\                                    #

@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/16 13:45:13 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/21 16:37:17 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/07/26 19:13:53 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@
 # define YR2(y) (y * (sin((e->roty) + M_PI_2)) * (sin(e->rot)))
 # define XA CT1 * XR1 (e->inc->x1) + CT2 * XR2 (e->inc->y1)
 # define YA2 (CT1 / 2 * YR1(e->inc->x1)) + CT2 / 2 * YR2 (e->inc->y1)
-# define YA -((e->inc->z) * sin((e->rot) + M_PI_2)) + YA2
+# define YA -((e->inc->z1) * sin((e->rot) + M_PI_2)) + YA2
 # define XB CT1 * XR1 (e->inc->x2) + CT2 * XR2 (e->inc->y1)
 # define YB2 CT1 / 2 * YR1 (e->inc->x2) + CT2 / 2 * YR2 (e->inc->y1)
 # define YB -((e->inc->z2) * sin((e->rot) + M_PI_2)) + YB2
@@ -139,9 +139,22 @@ typedef struct		s_map
 
 int					ft_expose_hook(t_env *e);
 t_coord				***ft_get_coord(t_map *map);
+void				ft_crux(t_box *b, t_env *e);
 void				ft_do_mlx(t_env *e);
+void				ft_display(t_env *e);
 void				ft_draw(t_env *e);
 void				ft_exit(char *s);
 void				ft_free(t_map *map, t_env *e);
+void				ft_mlx_color(t_env *e, int x, int y);
+void				ft_vect_ab(t_box *b, t_env *e);
+void				ft_vect_crux(t_box *b, t_env *e);
+void				ft_octant_1(t_box *b, t_env *e);
+void				ft_octant_2(t_box *b, t_env *e);
+void				ft_octant_3(t_box *b, t_env *e);
+void				ft_octant_4(t_box *b, t_env *e);
+void				ft_octant_5(t_box *b, t_env *e);
+void				ft_octant_6(t_box *b, t_env *e);
+void				ft_octant_7(t_box *b, t_env *e);
+void				ft_octant_8(t_box *b, t_env *e);
 
 #endif

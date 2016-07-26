@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/21 15:14:44 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/21 18:47:07 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/07/26 18:54:46 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void		ft_calc_pixel(t_env *e, int i, int j)
 {
 	if (i < e->coord[0][0]->size_y - 1 && j < e->coord[i + 1][0]->size_x)
-		e->inc->z3 = e->coord[i + 0][j]->z1;
+		e->inc->z3 = e->coord[i + 0][j]->z;
 	else
-		e->inc->z3 = e->coord[i][j]->z1;
+		e->inc->z3 = e->coord[i][j]->z;
 	if (i < e->coord[0][0]->size_y - 1 && j < e->coord[i + 1][0]->size_x)
 		e->inc->y2 = (e->coord[i + 0][j]->y * e->zoom);
 	else
@@ -27,10 +27,10 @@ static void		ft_calc_pixel(t_env *e, int i, int j)
 	else
 		e->inc->x2 = (e->coord[i][j]->x * e->zoom);
 	if (j < e->coord[i][0]->size_x - 1)
-		e->inc->z2 = e->coord[i][j + 1]->z1;
+		e->inc->z2 = e->coord[i][j + 1]->z;
 	else
-		e->inc->z2 = e->coord[i][j]->z1;
-	e->inc->z1 = e->coord[i][j]->z1 * e->zh;
+		e->inc->z2 = e->coord[i][j]->z;
+	e->inc->z1 = e->coord[i][j]->z * e->zh;
 	e->inc->x1 = (e->coord[i][j]->x * e->zoom);
 	e->inc->y1 = (e->coord[i][j]->y * e->zoom);
 	e->inc->z2 *= e->zh;
