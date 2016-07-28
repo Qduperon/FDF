@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/21 15:14:44 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/26 18:54:46 by qduperon         ###   ########.fr       */
+/*   Created: 2016/07/27 16:16:55 by qduperon          #+#    #+#             */
+/*   Updated: 2016/07/27 16:19:19 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 static void		ft_calc_pixel(t_env *e, int i, int j)
 {
 	if (i < e->coord[0][0]->size_y - 1 && j < e->coord[i + 1][0]->size_x)
-		e->inc->z3 = e->coord[i + 0][j]->z;
+		e->inc->z3 = e->coord[i + 1][j]->z;
 	else
 		e->inc->z3 = e->coord[i][j]->z;
 	if (i < e->coord[0][0]->size_y - 1 && j < e->coord[i + 1][0]->size_x)
-		e->inc->y2 = (e->coord[i + 0][j]->y * e->zoom);
+		e->inc->y2 = (e->coord[i + 1][j]->y * e->zoom);
 	else
 		e->inc->y2 = (e->coord[i][j]->y * e->zoom);
 	if (j < e->coord[i][0]->size_x - 1)
@@ -51,8 +51,8 @@ static void		ft_put_pixel(t_env *e, int i, int j)
 		ft_calc_pixel(e, i, j);
 		e->box->x1 = XA + OFF * e->off;
 		e->box->y1 = YA + YOFF * e->off2;
-		e->box->x2 = XB + OFF * e->off;
-		e->box->y2 = YB + YOFF * e->off2;
+		e->box->x2 = XC + OFF * e->off;
+		e->box->y2 = YC + YOFF * e->off2;
 		e->inc->z2 = 0;
 		ft_vect_ab(e->box, e);
 	}
@@ -60,14 +60,14 @@ static void		ft_put_pixel(t_env *e, int i, int j)
 
 void			ft_draw(t_env *e)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
-	if (!(e->inc = malloc(sizeof(t_inc))))
+	if ((e->inc = malloc(sizeof(t_inc))) == NULL)
 		exit(0);
-	if (!(e->box = malloc(sizeof(t_box))))
+	if ((e->box = malloc(sizeof(t_box))) == NULL)
 		exit(0);
 	while (i < e->coord[0][0]->size_y)
 	{

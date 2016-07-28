@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   vect_octant.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pmartine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/26 14:53:24 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/26 19:45:49 by qduperon         ###   ########.fr       */
+/*   Created: 2016/04/06 17:35:00 by pmartine          #+#    #+#             */
+/*   Updated: 2016/07/27 16:11:23 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 void	ft_octant_1(t_box *b, t_env *e)
 {
-	int	dx;
-	int	dy;
-	int	i;
+	int dx;
+	int dy;
+	int i;
 
 	dx = b->x2 - b->x1;
 	dy = b->y2 - b->y1;
@@ -38,8 +38,8 @@ void	ft_octant_1(t_box *b, t_env *e)
 
 void	ft_octant_2(t_box *b, t_env *e)
 {
-	int	dx;
-	int	dy;
+	int dx;
+	int dy;
 	int i;
 
 	dx = b->x2 - b->x1;
@@ -63,11 +63,11 @@ void	ft_octant_2(t_box *b, t_env *e)
 void	ft_octant_3(t_box *b, t_env *e)
 {
 	int dx;
-	int	dy;
+	int dy;
 	int i;
 
 	dx = b->x2 - b->x1;
-	dy = b->y2 - b->y2;
+	dy = b->y2 - b->y1;
 	i = dy;
 	dy = i * 2;
 	dx = dx * 2;
@@ -75,19 +75,19 @@ void	ft_octant_3(t_box *b, t_env *e)
 	{
 		ft_mlx_color(e, b->x1, b->y1);
 		i = i + dx;
-		if (i > 0)
+		if (i <= 0)
 		{
-			b->x1++;
+			b->x1--;
 			i = i + dy;
 		}
-		b->y1--;
+		b->y1++;
 	}
 }
 
 void	ft_octant_4(t_box *b, t_env *e)
 {
 	int dx;
-	int	dy;
+	int dy;
 	int i;
 
 	dx = b->x2 - b->x1;
@@ -99,11 +99,11 @@ void	ft_octant_4(t_box *b, t_env *e)
 	{
 		ft_mlx_color(e, b->x1, b->y1);
 		i = i + dy;
-		if (i < 0)
+		if (i >= 0)
 		{
-			b->y1--;
+			b->y1++;
 			i = i + dx;
 		}
-		b->x1++;
+		b->x1--;
 	}
 }
