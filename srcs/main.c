@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/15 15:18:45 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/20 17:18:58 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/08/03 14:39:45 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		main(int ac, char **av)
 	t_map	*map;
 	t_env	*e;
 
-	if (ac != 2 || ft_strstr(av[1], "dev") != 0)
+	if (ac != 2 || ft_strstr(av[1], "fdf") == 0)
 		ft_exit("Usage: ./fdf <mapfile.fdf>");
 	e = (t_env *)malloc(sizeof(t_env));
 	map = (t_map *)malloc(sizeof(t_map));

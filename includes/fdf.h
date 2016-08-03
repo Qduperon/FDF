@@ -6,7 +6,7 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/16 13:45:13 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/26 19:13:53 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/07/28 18:01:52 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include <unistd.h>
 # include <math.h>
 
-# define WIDTH	1500
-# define HEIGHT	750
+# define WIDTH	2000
+# define HEIGHT	1000
 # define XCENTER (WIDTH / 2)
 # define YCENTER (HEIGHT / 2)
 # define OFF 1.00
