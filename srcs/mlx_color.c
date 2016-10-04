@@ -6,11 +6,11 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/28 15:34:40 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/28 15:39:54 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/10/04 15:25:55 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 static void		ft_mlx_pixel(t_env *e, int x, int y, unsigned int place)
 {

@@ -6,11 +6,11 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/28 14:15:06 by qduperon          #+#    #+#             */
-/*   Updated: 2016/08/03 14:38:20 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/10/04 15:24:51 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 static int	ft_loop_hook(t_env *e)
 {

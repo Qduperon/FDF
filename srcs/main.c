@@ -6,11 +6,11 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/15 15:18:45 by qduperon          #+#    #+#             */
-/*   Updated: 2016/08/03 14:39:45 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/10/04 15:30:06 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 int		main(int ac, char **av)
 {

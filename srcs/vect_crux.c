@@ -6,11 +6,11 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/26 14:40:08 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/26 14:51:10 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/10/04 15:26:39 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 static void	ft_crux_x(int x1, int y1, int x2, t_env *e)
 {

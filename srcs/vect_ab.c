@@ -6,11 +6,11 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/27 16:02:43 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/27 16:04:12 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/10/04 15:26:25 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 void	ft_vect_ab(t_box *b, t_env *e)
 {

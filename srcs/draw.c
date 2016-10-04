@@ -6,11 +6,11 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/27 16:16:55 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/27 16:19:19 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/10/04 15:25:21 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 static void		ft_calc_pixel(t_env *e, int i, int j)
 {

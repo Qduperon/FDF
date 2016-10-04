@@ -6,11 +6,11 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/23 15:10:06 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/26 19:12:48 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/10/04 15:26:10 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 void	ft_free(t_map *map, t_env *e)
 {

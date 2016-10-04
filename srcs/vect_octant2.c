@@ -6,11 +6,11 @@
 /*   By: qduperon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/27 16:07:51 by qduperon          #+#    #+#             */
-/*   Updated: 2016/07/27 16:11:53 by qduperon         ###   ########.fr       */
+/*   Updated: 2016/10/04 15:26:54 by qduperon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 void	ft_octant_5(t_box *b, t_env *e)
 {
