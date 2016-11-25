@@ -52,8 +52,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	make -C libft
 	make -C minilibx_macos
-	gcc -o $(NAME) $(FLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit \
-		-lft -L./libft -I./minilibx_macos/
+	gcc -o $(NAME) $(FLAGS) $(OBJ) -L minilibx_macos -lmlx -framework OpenGL -framework AppKit libft/libft.a minilibx_macos/libmlx.a
 	echo "Fdf done"
 
 #==============================================================================#
